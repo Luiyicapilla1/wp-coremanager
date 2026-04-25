@@ -1,3 +1,7 @@
 vendor/
 
 .vscode/
+
+sonar-project.properties
+
+.scannerwork/
