@@ -15,11 +15,14 @@ class ComponenteSync extends Module
         return true;
     }
 
-    public function registrar() {}
+    public function registrar()
+    {
+        // Noncompliant - method is empty
+    }
 
     public function sync_componente(bool $force = false)
     {
-        require_once(CM_PLUGIN_PATH . 'queries/queries.php');
+        require_once CM_PLUGIN_PATH . 'queries/queries.php';
         $client = new GraphQLClient;
         $query = \COMPONENTES_QUERY;
         $data = $client->query($query);
@@ -64,6 +67,7 @@ class ComponenteSync extends Module
                 $post_idioms_list = $this->post_languages_relations($post_id, $post_languages_list);
 
                 if ($post['modificationDate'] != get_post_meta($post_id, 'modification_date')[0] || $force) {
+                    //TODO: Implementación sincronización campos Componente
                 }
 
                 //Modification Date Post Meta
