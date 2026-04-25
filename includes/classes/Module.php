@@ -44,9 +44,9 @@ abstract class Module
     //---------------------------------------
     public function set_image_from_wp_media($image_url, $post_id)
     {
-        require_once(ABSPATH . 'wp-admin' . '/includes/image.php');
-        require_once(ABSPATH . 'wp-admin' . '/includes/file.php');
-        require_once(ABSPATH . 'wp-admin' . '/includes/media.php');
+        require_once ABSPATH . 'wp-admin' . '/includes/image.php';
+        require_once ABSPATH . 'wp-admin' . '/includes/file.php';
+        require_once ABSPATH . 'wp-admin' . '/includes/media.php';
         try {
             $media_id = media_sideload_image($image_url, $post_id, null, 'id');
             return $media_id;
