@@ -1,0 +1,6 @@
+/*
+ * Ocultar opciones del plugin Download Monitor en el panel de administración.
+ */
+.wpchill-upsells-wrapper, .wrap.dlm-admin-settings .nav-tab:has(span), .post-type-dlm_download #postdivrich, .post-type-dlm_download #postimagediv, .post-type-dlm_download #download-monitor-options, .post-type-dlm_download .dlm-page-header, .dlm-page-header + #wpbody .nav-tab-wrapper {
+	display: none!important;
+}
