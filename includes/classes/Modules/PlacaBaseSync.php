@@ -98,21 +98,21 @@ class PlacaBaseSync extends Module
                     //---------------------------------------
                     // ACF Fields Relations
                     //---------------------------------------
-                    update_field('sku', $post['url_' . $language], $post_id);
-                    update_field('ean', $post['url_' . $language], $post_id);
-                    update_field('nombre', $post['url_' . $language], $post_id);
-                    update_field('slug', $post['url_' . $language], $post_id);
-                    update_field('ivan', $post['url_' . $language], $post_id);
-                    update_field('stock', $post['url_' . $language], $post_id);
-                    update_field('descripcion', $post['url_' . $language], $post_id);
-                    update_field('titulo_seo', $post['url_' . $language], $post_id);
-                    update_field('descripcion_seo', $post['url_' . $language], $post_id);
-                    update_field('socket', $post['url_' . $language], $post_id);
-                    update_field('chipset', $post['url_' . $language], $post_id);
-                    update_field('form_factor', $post['url_' . $language], $post_id);
-                    update_field('ramtype', $post['url_' . $language], $post_id);
-                    update_field('ramslots', $post['url_' . $language], $post_id);
-                    update_field('m2slots', $post['url_' . $language], $post_id);
+                    update_field('sku', $post['sku_' . $language], $post_id);
+                    update_field('ean', $post['ean_' . $language], $post_id);
+                    update_field('nombre', $post['nombre_' . $language], $post_id);
+                    update_field('slug', $post['slug_' . $language], $post_id);
+                    update_field('ivan', $post['iva'], $post_id);
+                    update_field('stock', $post['stock'], $post_id);
+                    update_field('descripcion', $post['descripcion_' . $language], $post_id);
+                    update_field('titulo_seo', $post['titulo_seo_' . $language], $post_id);
+                    update_field('descripcion_seo', $post['descripcion_seo_' . $language], $post_id);
+                    update_field('socket', $post['socket'], $post_id);
+                    update_field('chipset', $post['chipset'], $post_id);
+                    update_field('form_factor', $post['form_factor'], $post_id);
+                    update_field('ramtype', $post['ramtype'], $post_id);
+                    update_field('ramslots', $post['ramslots'], $post_id);
+                    update_field('m2slots', $post['m2slots'], $post_id);
                 }
 
                 //Modification Date Post Meta
