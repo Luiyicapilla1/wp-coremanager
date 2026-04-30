@@ -1,8 +1,31 @@
 <?php
 
+//---------------------------------------
+// Constant var almacenamiento query
+//---------------------------------------
+define('ALMACENAMIENTO_QUERY', '');
+
 
 //---------------------------------------
-// Constant var ventajas query
+// Constant var ram query
+//---------------------------------------
+define('RAM_QUERY', '');
+
+
+//---------------------------------------
+// Constant var cpu query
+//---------------------------------------
+define('CPU_QUERY', '');
+
+
+//---------------------------------------
+// Constant var placa base query
+//---------------------------------------
+define('PLACA_BASE_QUERY', '');
+
+
+//---------------------------------------
+// Constant var gpu query
 //---------------------------------------
 define('GPU_QUERY', '
     query{
