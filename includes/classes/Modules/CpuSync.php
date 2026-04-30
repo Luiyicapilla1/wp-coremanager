@@ -98,20 +98,22 @@ class CpuSync extends Module
                     //---------------------------------------
                     // ACF Fields Relations
                     //---------------------------------------
-                    update_field('sku', $post['url_' . $language], $post_id);
-                    update_field('ean', $post['url_' . $language], $post_id);
-                    update_field('nombre', $post['url_' . $language], $post_id);
-                    update_field('slug', $post['url_' . $language], $post_id);
-                    update_field('ivan', $post['url_' . $language], $post_id);
-                    update_field('stock', $post['url_' . $language], $post_id);
-                    update_field('descripcion', $post['url_' . $language], $post_id);
-                    update_field('titulo_seo', $post['url_' . $language], $post_id);
-                    update_field('descripcion_seo', $post['url_' . $language], $post_id);
-                    update_field('threads', $post['url_' . $language], $post_id);
-                    update_field('baselock', $post['url_' . $language], $post_id);
-                    update_field('boostlock', $post['url_' . $language], $post_id);
-                    update_field('tdp', $post['url_' . $language], $post_id);
-                    update_field('architecture', $post['url_' . $language], $post_id);
+                    update_field('sku', $post['sku_' . $language], $post_id);
+                    update_field('ean', $post['ean_' . $language], $post_id);
+                    update_field('nombre', $post['nombre_' . $language], $post_id);
+                    update_field('slug', $post['slug_' . $language], $post_id);
+                    update_field('ivan', $post['iva'], $post_id);
+                    update_field('stock', $post['stock'], $post_id);
+                    update_field('descripcion', $post['descripcion_' . $language], $post_id);
+                    update_field('titulo_seo', $post['titulo_seo_' . $language], $post_id);
+                    update_field('descripcion_seo', $post['descripcion_seo_' . $language], $post_id);
+                    update_field('socket', $post['socket'], $post_id);
+                    update_field('cores', $post['cores'], $post_id);
+                    update_field('threads', $post['threads'], $post_id);
+                    update_field('baselock', $post['baseclock'], $post_id);
+                    update_field('boostlock', $post['boostclock'], $post_id);
+                    update_field('tdp', $post['tdp'], $post_id);
+                    update_field('architecture', $post['architecture'], $post_id);
                 }
 
                 //Modification Date Post Meta
