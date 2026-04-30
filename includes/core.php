@@ -9,6 +9,7 @@
 namespace wp_coremanager\Core;
 
 use wp_coremanager\ModuleInitialization;
+use wp_coremanager\Modules\Cron\GpuSyncCron;
 
 /**
  * Rutina de preparación predefinida
@@ -64,6 +65,9 @@ function activate()
 function deactivate()
 {
     flush_rewrite_rules();
+
+    $gpuCron = new GpuSyncCron();
+    $gpuCron->desactivar_cron();
 }
 
 /**
