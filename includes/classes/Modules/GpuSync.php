@@ -10,6 +10,7 @@ set_time_limit(0);
 class GpuSync extends Module
 {
     public $load_order = 15;
+    private const PIM_URL = 'http://127.0.0.1:8080';
 
     public function puede_registrar()
     {
@@ -68,7 +69,48 @@ class GpuSync extends Module
                 $post_idioms_list = $this->post_languages_relations($post_id, $post_languages_list);
 
                 if ($post['modificationDate'] != get_post_meta($post_id, 'modification_date')[0] || $force) {
-                    //TODO: Implementación sincronización campos Componente
+
+
+                    //---------------------------------------
+                    // Logic Images
+                    //---------------------------------------
+                    $image_id = get_field('imagen', $post_id);
+                    if ($image_id != 121471) {
+                        wp_delete_attachment($image_id, true);
+                    } else {
+                        update_field('imagen', null, $post_id);
+                    }
+                    if ($language == 'es') {
+                        $image_post = $this->set_image_from_wp_media(self::PIM_URL . $post['imagen']['fullpath'], $post_id);
+                        update_field('imagen', $image_post, $post_id);
+                        FolderModel::setFoldersForPosts($image_post, $folder);
+                    } else {
+                        if ($image_post != null) {
+                            update_field('imagen', $image_post, $post_id);
+                            FolderModel::setFoldersForPosts($image_post, $folder);
+                        }
+                    }
+                    //PLACEHOLDER
+                    if (get_field('imagen', $post_id) == null) {
+                        update_field('imagen', 121471, $post_id);
+                    }
+
+                    //---------------------------------------
+                    // ACF Fields Relations
+                    //---------------------------------------
+                    update_field('sku', $post['url_' . $language], $post_id);
+                    update_field('ean', $post['url_' . $language], $post_id);
+                    update_field('nombre', $post['url_' . $language], $post_id);
+                    update_field('slug', $post['url_' . $language], $post_id);
+                    update_field('ivan', $post['url_' . $language], $post_id);
+                    update_field('stock', $post['url_' . $language], $post_id);
+                    update_field('descripcion', $post['url_' . $language], $post_id);
+                    update_field('titulo_seo', $post['url_' . $language], $post_id);
+                    update_field('descripcion_seo', $post['url_' . $language], $post_id);
+                    update_field('chipset', $post['url_' . $language], $post_id);
+                    update_field('vram', $post['url_' . $language], $post_id);
+                    update_field('vramtype', $post['url_' . $language], $post_id);
+                    update_field('tdp', $post['url_' . $language], $post_id);
                 }
 
                 //Modification Date Post Meta
