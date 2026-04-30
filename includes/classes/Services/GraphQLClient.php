@@ -30,9 +30,9 @@ class GraphQLClient
     public function __construct()
     {
         // URL del endpoint GraphQL de Pimcore
-        $this->endpoint = 'http://localhost/pimcore-graphql-webservices/api';
+        $this->endpoint = 'http://127.0.0.1:8080/pimcore-graphql-webservices/api';
         // Token de autenticación para la API
-        $this->token = '8563dffe331461c6b0e6124d7ff95fa9';
+        $this->token = '741e8ac7bb4ceb94de70edc557252c0b';
 
         // Instancia de Guzzle configurada con cabeceras necesarias
         $this->client = new Client([
