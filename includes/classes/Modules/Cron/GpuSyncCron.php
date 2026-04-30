@@ -23,15 +23,15 @@ class GpuSyncCron extends Module
     public function registrar()
     {
         // Programa el evento si aún no está programado
-        if (! wp_next_scheduled('wp_delvalle_sync_gpu_event')) {
-            wp_schedule_event(time(), 'twicedaily', 'wp_delvalle_sync_gpu_event');
+        if (! wp_next_scheduled('wp_coremanager_sync_gpu_event')) {
+            wp_schedule_event(time(), 'twicedaily', 'wp_coremanager_sync_gpu_event');
         }
         // Asocia el evento a la función de sincronización
-        add_action('wp_delvalle_sync_gpu_event', [$this, 'trigger_sync']);
+        add_action('wp_coremanager_sync_gpu_event', [$this, 'trigger_sync']);
     }
 
     /**
-     * Ejecuta la sincronización de productos llamando a VentajasSync.
+     * Ejecuta la sincronización.
      *
      * @return void
      */
@@ -48,9 +48,9 @@ class GpuSyncCron extends Module
      */
     public function desactivar_cron()
     {
-        $timestap = wp_next_scheduled('wp_delvalle_sync_gpu_event');
+        $timestap = wp_next_scheduled('wp_coremanager_sync_gpu_event');
         if ($timestap) {
-            wp_unschedule_event($timestap, 'wp_delvalle_sync_gpu_event');
+            wp_unschedule_event($timestap, 'wp_coremanager_sync_gpu_event');
         }
     }
 }
