@@ -4,6 +4,8 @@ namespace wp_coremanager\Modules;
 
 use wp_coremanager\Module;
 use wp_coremanager\Services\GraphQLClient;
+use FileBird\Model\Folder as FolderModel;
+
 
 set_time_limit(0);
 
